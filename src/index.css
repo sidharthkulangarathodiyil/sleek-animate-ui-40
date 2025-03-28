@@ -70,23 +70,22 @@
 
   .nav-button {
     @apply glassmorphism py-3 px-5 rounded-lg flex items-center gap-3
-           transition-all duration-300 ease-in-out transform hover:scale-102
-           hover:shadow-md hover:bg-white/90 hover:border-opacity-80;
+           transition-all duration-300 ease-in-out transform hover:scale-105
+           hover:shadow-md hover:bg-white/90;
   }
 
   .left-section-button {
-    @apply nav-button text-[#721B43] font-medium border-[#721B43]/20
-           hover:border-[#721B43]/50 hover:bg-[#721B43]/5;
+    @apply nav-button text-brand-darkGreen font-medium border-brand-darkGreen/20
+           hover:border-brand-darkGreen/50 hover:text-brand-darkGreen;
   }
 
   .center-section-button {
-    @apply nav-button text-[#721B43] font-medium border-[#721B43]/20
-           hover:border-[#721B43]/50 hover:bg-[#721B43]/5;
+    @apply nav-button text-brand-darkBrown font-medium border-brand-darkBrown/20
+           hover:border-brand-darkBrown/50 hover:text-brand-darkBrown;
   }
 
   .right-section-button {
-    @apply nav-button text-[#721B43] font-medium border-[#721B43]/20
-           hover:border-[#721B43]/50 hover:bg-[#721B43]/5;
+    @apply nav-button font-medium;
   }
 }
 

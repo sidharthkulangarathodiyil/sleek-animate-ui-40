@@ -16,7 +16,7 @@ const NavButton = ({ to, label, icon, className }: NavButtonProps) => {
       <span className="inline-flex p-2 rounded-full bg-white/50 group-hover:bg-white transition-colors duration-300">
         {icon}
       </span>
-      <span className="font-medium group-hover:translate-x-1 transition-transform duration-300">{label}</span>
+      <span className="font-medium">{label}</span>
     </Link>
   );
 };
