@@ -1,20 +1,36 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DurhamLogo from '@/components/DurhamLogo';
 import NavButton from '@/components/NavButton';
+import LoadingScreen from '@/components/LoadingScreen';
 import { 
   Youtube, 
   ArrowRight, 
-  Image, 
   CircleArrowRight, 
   CircleArrowUp,
   CircleArrowDown,
   CircleArrowLeft,
   Folder,
-  FolderOpen
+  FolderOpen,
+  Image
 } from 'lucide-react';
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulating loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <div className="min-h-screen w-full bg-brand-white flex flex-col items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -25,107 +41,111 @@ const Index = () => {
       </div>
       
       {/* Main Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-8">
         {/* Durham College Logo */}
-        <div className="mb-6">
+        <div className="mb-6 flex justify-center">
           <DurhamLogo />
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-4xl font-bold text-brand-darkGreen text-center mb-12">
+        <h1 className="text-5xl font-bold text-brand-darkGreen text-center mb-16">
           Infographic Progress
         </h1>
         
         {/* Navigation Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Left Section */}
-          <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-brand-darkGreen mb-4">
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
               THREE ANIMATIONS (ASSIGNMENT 05)
             </h2>
             <NavButton 
-              to="./dc-psa" 
+              to="/dc-psa" 
               label="Durham College (PSA)" 
-              icon={<CircleArrowRight className="text-brand-darkGreen" />} 
-              className="left-section-button"
+              icon={<CircleArrowRight className="text-[#721B43]" />} 
+              className="left-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./best-buy" 
+              to="/best-buy" 
               label="Best Buy" 
-              icon={<CircleArrowRight className="text-brand-darkGreen" />} 
-              className="left-section-button"
+              icon={<CircleArrowRight className="text-[#721B43]" />} 
+              className="left-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./burger-king" 
+              to="/burger-king" 
               label="Burger King" 
-              icon={<CircleArrowRight className="text-brand-darkGreen" />} 
-              className="left-section-button"
+              icon={<CircleArrowRight className="text-[#721B43]" />} 
+              className="left-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
           </div>
           
           {/* Center Section */}
-          <div className="flex flex-col space-y-4">
-            <h2 className="text-2xl font-bold text-brand-darkBrown mb-4">
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
               DIGITAL SIGNAGE PANE
             </h2>
             <NavButton 
-              to="./comp" 
+              to="/comp" 
               label="COMP (Assignment 04)" 
-              icon={<CircleArrowUp className="text-brand-darkBrown" />} 
-              className="center-section-button"
+              icon={<CircleArrowUp className="text-[#721B43]" />} 
+              className="center-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./logo" 
+              to="/logo" 
               label="Logo Pane (Assignment 06)" 
-              icon={<CircleArrowUp className="text-brand-darkBrown" />} 
-              className="center-section-button"
+              icon={<CircleArrowUp className="text-[#721B43]" />} 
+              className="center-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./news" 
+              to="/news" 
               label="News & Ticker Tape (Assignment 07)" 
-              icon={<CircleArrowUp className="text-brand-darkBrown" />} 
-              className="center-section-button"
+              icon={<CircleArrowUp className="text-[#721B43]" />} 
+              className="center-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./weather" 
+              to="/weather" 
               label="Weather Pane (Assignment 08)" 
-              icon={<CircleArrowUp className="text-brand-darkBrown" />} 
-              className="center-section-button"
+              icon={<CircleArrowUp className="text-[#721B43]" />} 
+              className="center-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
           </div>
           
           {/* Right Section */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
+              ADDITIONAL FEATURES
+            </h2>
             <NavButton 
-              to="./admin" 
+              to="/admin" 
               label="Admin Panel" 
-              icon={<CircleArrowLeft className="text-brand-darkPink" />} 
-              className="admin-button"
+              icon={<CircleArrowLeft className="text-[#721B43]" />} 
+              className="right-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./motion-graphics" 
+              to="/motion-graphics" 
               label="Motion Graphics Pane" 
-              icon={<Image className="text-brand-red" />} 
-              className="motion-button"
+              icon={<Image className="text-[#721B43]" />} 
+              className="right-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./youtube" 
+              to="/youtube" 
               label="YouTube Pane" 
-              icon={<Youtube className="text-brand-orange" />} 
-              className="youtube-button"
+              icon={<Youtube className="text-[#721B43]" />} 
+              className="right-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
             <NavButton 
-              to="./final" 
+              to="/final" 
               label="Final" 
-              icon={<Folder className="text-brand-yellow" />} 
-              className="final-button"
+              icon={<Folder className="text-[#721B43]" />} 
+              className="right-section-button border-[#721B43]/20 hover:border-[#721B43]/50 text-[#721B43] hover:text-[#721B43]"
             />
           </div>
         </div>
         
         {/* Footer */}
-        <div className="mt-16 text-center text-sm text-brand-darkBrown/60 font-lato">
-          <p>Infographic Progress Project - Durham College</p>
+        <div className="mt-20 text-center text-sm text-brand-darkBrown/80 font-lato">
+          <p className="font-medium">Author: Sidharth Kulangara Thodiyil 100918679</p>
+          <p className="mt-1">Infographic Progress Project - Durham College</p>
         </div>
       </div>
     </div>

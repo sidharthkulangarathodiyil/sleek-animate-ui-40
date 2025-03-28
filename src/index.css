@@ -69,7 +69,7 @@
   }
 
   .nav-button {
-    @apply glassmorphism py-3 px-5 rounded-lg flex items-center gap-2 
+    @apply glassmorphism py-3 px-5 rounded-lg flex items-center gap-3
            transition-all duration-300 ease-in-out transform hover:scale-105
            hover:shadow-md hover:bg-white/90;
   }
@@ -87,24 +87,18 @@
   .right-section-button {
     @apply nav-button font-medium;
   }
+}
 
-  .admin-button {
-    @apply right-section-button text-brand-darkPink border-brand-darkPink/20
-           hover:border-brand-darkPink/50 hover:text-brand-darkPink;
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+    transform: translateX(-100%);
   }
-
-  .motion-button {
-    @apply right-section-button text-brand-red border-brand-red/20
-           hover:border-brand-red/50 hover:text-brand-red;
+  50% {
+    width: 100%;
   }
-
-  .youtube-button {
-    @apply right-section-button text-brand-orange border-brand-orange/20
-           hover:border-brand-orange/50 hover:text-brand-orange;
-  }
-
-  .final-button {
-    @apply right-section-button text-brand-yellow border-brand-yellow/20
-           hover:border-brand-yellow/50 hover:text-brand-yellow;
+  100% {
+    width: 0%;
+    transform: translateX(100%);
   }
 }
