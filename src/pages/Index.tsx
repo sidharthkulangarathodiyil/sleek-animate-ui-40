@@ -27,19 +27,22 @@ const Index = () => {
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4">
         {/* Durham College Logo */}
-        <div className="mb-12">
+        <div className="mb-6">
           <DurhamLogo />
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-4xl font-bold text-brand-darkGreen text-center mb-16">
-          THREE ANIMATIONS (ASSIGNMENT 05)
+        <h1 className="text-4xl font-bold text-brand-darkGreen text-center mb-12">
+          Infographic Progress
         </h1>
         
         {/* Navigation Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
           {/* Left Section */}
           <div className="flex flex-col space-y-4">
+            <h2 className="text-2xl font-bold text-brand-darkGreen mb-4">
+              THREE ANIMATIONS (ASSIGNMENT 05)
+            </h2>
             <NavButton 
               to="./dc-psa" 
               label="Durham College (PSA)" 
@@ -62,6 +65,9 @@ const Index = () => {
           
           {/* Center Section */}
           <div className="flex flex-col space-y-4">
+            <h2 className="text-2xl font-bold text-brand-darkBrown mb-4">
+              DIGITAL SIGNAGE PANE
+            </h2>
             <NavButton 
               to="./comp" 
               label="COMP (Assignment 04)" 
