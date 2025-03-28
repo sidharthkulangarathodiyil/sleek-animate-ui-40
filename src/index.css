@@ -54,6 +54,10 @@
     @apply border-border;
   }
 
+  html, body {
+    @apply overflow-hidden h-screen;
+  }
+
   body {
     @apply bg-background text-foreground font-lato;
   }
@@ -69,23 +73,34 @@
   }
 
   .nav-button {
-    @apply glassmorphism py-3 px-5 rounded-lg flex items-center gap-3
-           transition-all duration-300 ease-in-out transform hover:scale-105
-           hover:shadow-md hover:bg-white/90;
+    @apply glassmorphism py-2.5 px-4 rounded-lg flex items-center gap-3
+           transition-all duration-300 ease-in-out transform
+           hover:shadow-md hover:bg-white/90 relative overflow-hidden;
   }
-
-  .left-section-button {
-    @apply nav-button text-brand-darkGreen font-medium border-brand-darkGreen/20
-           hover:border-brand-darkGreen/50 hover:text-brand-darkGreen;
+  
+  .nav-button::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r opacity-0 blur transition-all duration-500 ease-in-out -z-10;
   }
-
-  .center-section-button {
-    @apply nav-button text-brand-darkBrown font-medium border-brand-darkBrown/20
-           hover:border-brand-darkBrown/50 hover:text-brand-darkBrown;
+  
+  .nav-button:hover::before {
+    @apply opacity-70;
   }
-
-  .right-section-button {
-    @apply nav-button font-medium;
+  
+  .nav-button span {
+    @apply relative z-10;
+  }
+  
+  .left-section-button::before {
+    @apply from-[#721B43]/20 via-[#721B43]/30 to-[#721B43]/20;
+  }
+  
+  .center-section-button::before {
+    @apply from-[#721B43]/20 via-[#721B43]/30 to-[#721B43]/20;
+  }
+  
+  .right-section-button::before {
+    @apply from-[#721B43]/20 via-[#721B43]/30 to-[#721B43]/20;
   }
 }
 
@@ -100,5 +115,26 @@
   100% {
     width: 0%;
     transform: translateX(100%);
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(114, 27, 67, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(114, 27, 67, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(114, 27, 67, 0);
+  }
+}
+
+@keyframes iconRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -32,7 +32,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-brand-white flex flex-col items-center justify-center overflow-hidden">
+    <div className="h-screen w-full bg-brand-white flex flex-col items-center justify-between py-4">
       {/* Background Elements */}
       <div className="fixed inset-0 z-0">
         <div className="absolute top-20 left-20 w-60 h-60 bg-brand-lightGreen/10 rounded-full blur-3xl"></div>
@@ -41,22 +41,22 @@ const Index = () => {
       </div>
       
       {/* Main Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-8">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 flex flex-col h-full">
         {/* Durham College Logo */}
-        <div className="mb-6 flex justify-center">
+        <div className="mt-2 flex justify-center">
           <DurhamLogo />
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-5xl font-bold text-brand-darkGreen text-center mb-16">
+        <h1 className="text-4xl lg:text-5xl font-bold text-brand-darkGreen text-center my-4">
           Infographic Progress
         </h1>
         
         {/* Navigation Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 flex-grow">
           {/* Left Section */}
-          <div className="flex flex-col space-y-6">
-            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
+          <div className="flex flex-col space-y-3">
+            <h2 className="text-xl lg:text-2xl font-bold text-[#721B43] mb-2 text-center">
               THREE ANIMATIONS (ASSIGNMENT 05)
             </h2>
             <NavButton 
@@ -80,8 +80,8 @@ const Index = () => {
           </div>
           
           {/* Center Section */}
-          <div className="flex flex-col space-y-6">
-            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
+          <div className="flex flex-col space-y-3">
+            <h2 className="text-xl lg:text-2xl font-bold text-[#721B43] mb-2 text-center">
               DIGITAL SIGNAGE PANE
             </h2>
             <NavButton 
@@ -111,8 +111,8 @@ const Index = () => {
           </div>
           
           {/* Right Section */}
-          <div className="flex flex-col space-y-6">
-            <h2 className="text-2xl font-bold text-[#721B43] mb-6 text-center">
+          <div className="flex flex-col space-y-3">
+            <h2 className="text-xl lg:text-2xl font-bold text-[#721B43] mb-2 text-center">
               ADDITIONAL FEATURES
             </h2>
             <NavButton 
@@ -143,9 +143,9 @@ const Index = () => {
         </div>
         
         {/* Footer */}
-        <div className="mt-20 text-center text-sm text-brand-darkBrown/80 font-lato">
+        <div className="mt-auto mb-2 text-center text-sm text-brand-darkBrown/80 font-lato">
           <p className="font-medium">Author: Sidharth Kulangara Thodiyil 100918679</p>
-          <p className="mt-1">Infographic Progress Project - Durham College</p>
+          <p>Infographic Progress Project - Durham College</p>
         </div>
       </div>
     </div>

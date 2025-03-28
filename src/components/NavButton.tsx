@@ -13,10 +13,12 @@ interface NavButtonProps {
 const NavButton = ({ to, label, icon, className }: NavButtonProps) => {
   return (
     <Link to={to} className={cn("nav-button group", className)}>
-      <span className="inline-flex p-2 rounded-full bg-white/50 group-hover:bg-white transition-colors duration-300">
-        {icon}
+      <span className="inline-flex p-2 rounded-full bg-white/50 group-hover:bg-white group-hover:animate-[buttonPulse_1.5s_infinite] transition-colors duration-300">
+        {React.cloneElement(icon as React.ReactElement, {
+          className: "transition-transform duration-500 group-hover:scale-110"
+        })}
       </span>
-      <span className="font-medium">{label}</span>
+      <span className="font-medium transition-all duration-300 group-hover:translate-x-1">{label}</span>
     </Link>
   );
 };
