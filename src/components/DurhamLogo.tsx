@@ -9,13 +9,8 @@ const DurhamLogo = () => {
         <img 
           src="/lovable-uploads/db7cd2eb-44a5-4275-b03c-4afbd3ae22b1.png" 
           alt="Durham College Logo" 
-          className="h-28 relative z-10 transition-all duration-300 group-hover:brightness-110"
+          className="h-24 relative z-10 transition-all duration-300 group-hover:brightness-110"
         />
-      </div>
-      
-      {/* Simple underline */}
-      <div className="mt-2 w-full">
-        <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-brand-darkGreen to-transparent"></div>
       </div>
     </div>
   );
